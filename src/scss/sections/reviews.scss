@@ -1,0 +1,79 @@
+.reviews {
+    padding: 100px 0;
+    background: #F6F7FA;
+    &-slider {
+        margin-top: 70px;
+        overflow: hidden;
+    }
+    &-wrapper {
+        display: flex;
+        background-color: white;
+        justify-content: space-between;
+        padding: 40px 100px;
+        border-radius: 18px;
+        &-item {
+            &:first-child {
+                & img {
+                    border-radius: 18px;
+                    width: 300px;
+                    object-fit: cover;
+                    height: 370px;
+                    margin-right: 20px;
+                }
+              
+            }
+            &:last-child {
+                max-width: 600px;
+                object-fit: cover;
+                height: 370px;
+            }
+            &-title {
+                color: orange;
+                text-align: center;
+                font-family: $mainFont;
+                font-size: 35px;
+                padding-bottom: 30px;
+            }
+            &-desc {
+                color: #808080;
+                font-weight: 600;
+                font-family: $mainFont;
+                font-size: 25px;
+                
+            }
+        }
+    }
+}
+
+// style slider
+
+.reviews-slider .swiper-button-next {
+    background-color: orange;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 50px;
+    &::after {
+        font-size: 30px;
+        color: white;
+    }
+}
+
+.reviews-slider .swiper-button-prev {
+    background-color: orange;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 50px;
+    &::after {
+        font-size: 30px;
+        color: white;
+    }
+}
+
+.reviews-slider {
+    position: relative;
+}
+

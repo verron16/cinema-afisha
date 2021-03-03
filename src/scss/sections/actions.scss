@@ -1,0 +1,143 @@
+.actions {
+    padding: 100px 0;
+    &-item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 18px;
+        padding: 30px;
+        min-height: 450px;
+        position: relative;
+        &-btn {
+            cursor: pointer;
+            outline: none;
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            background-color: orange;
+            border: 2px solid orange;
+           
+            font-weight: 700;
+            border-radius: 18px;
+            transition: .3s linear;
+            padding: 8px 20px;
+            &-link {
+                color: white;
+                font-family: $mainFont;
+                text-decoration: none;
+            }
+            &:hover {
+                background: transparent;
+                color: orange;
+            }
+        }
+        &-wrapper {
+            color: white;
+            
+            &-title {
+                font-family: $mainFont;
+                padding-bottom: 10px;
+                & span {
+                    color: orange;
+                }
+            }
+            &-songs {
+                font-family: $mainFont;
+                padding-bottom: 15px;
+            }
+            &-price {
+                font-family: $mainFont;
+                padding: 5px;
+                background-color: orange;
+                display: inline;
+                border-radius: 18px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+
+// slider style
+
+.actions-slider {
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.actions-slider .swiper-slide {
+    width: 1100px;
+    position: relative;
+    min-height: 200px;
+}
+
+//set bg slide
+
+.--morgen {
+    background-image: url('../img/morgen.webp');
+}
+.--kizaru {
+    background-image: url('../img/kizaru.webp');
+}
+.--markul {
+    background-image: url('../img/markul.webp');
+}
+
+.actions-slider .swiper-slide:not(.swiper-slide-active) {
+    opacity: .25;
+}
+
+.actions-slider .swiper-slide:not(.swiper-slide-active) .actions-item{
+    min-height: 350px;
+}
+
+.actions-slider .swiper-wrapper {
+    align-items: center;
+}
+
+.actions-slider {
+    position: relative;
+}
+
+.actions-slider .swiper-button-next {
+    background-color: orange;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 50px;
+    &::after {
+        font-size: 30px;
+        color: white;
+    }
+}
+
+.actions-slider .swiper-button-prev {
+    background-color: orange;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 50px;
+    &::after {
+        font-size: 30px;
+        color: white;
+    }
+}
+
+
+
+
+.swiper-pagination .swiper-pagination-bullet {
+    background-color: white;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: orange;
+}
+
+.actions-slider >.swiper-pagination-bullets {
+ 
+}

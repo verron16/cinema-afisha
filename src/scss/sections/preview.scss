@@ -1,0 +1,76 @@
+@keyframes circleMove {
+    0% {
+        transform: translate3d(50px, 40px, 0px);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: translate3d(50px, 50px, 0px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(50px, 40px, 0px);
+    }
+}
+
+.preview {
+    padding: 100px 0 100px 0;
+    z-index: 5;
+    &-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        position: relative;
+        &-item {
+            font-family: $mainFont;
+            &-title {
+                padding-bottom: 40px;
+                z-index: 100;
+                color: white;
+                font-size: 45px;
+                & span {
+                    color: orange;
+                }
+            }
+            &-desc {
+                color: white;
+                font-size: 20px;
+                letter-spacing: 1px;
+                line-height: 30px;
+                & span {
+                    background-color: orange;
+                    border-radius: 18px;
+                    padding: 0 8px;
+                    display: inline-block;
+                }
+            }
+            &-link {
+                text-decoration: none;
+                color: white;
+                font-weight: 700;
+                background-color: orange;
+                border-radius: 18px;
+                padding: 10px 20px;
+                transition: .3s linear;
+                border: 2px solid orange;
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid orange;
+                    color: orange;
+                }
+            }
+            &-btn {
+                margin-top: 50px;
+            }
+            &:last-child {
+                
+                width: 500px;
+                animation-name: circleMove;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+}
