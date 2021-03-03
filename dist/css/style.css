@@ -536,7 +536,7 @@ header {
   text-decoration: none;
   transition: .4s linear all;
   position: relative;
-  padding-bottom: 26px;
+  padding-bottom: 27px;
 }
 
 .menu-item-link::before {
