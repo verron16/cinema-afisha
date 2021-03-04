@@ -1017,7 +1017,7 @@ header {
 
 .reviews-wrapper-item-desc {
   color: #808080;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Century Gothic";
   font-size: 25px;
 }
@@ -1074,7 +1074,7 @@ header {
 }
 
 .faq-wrapper-item {
-  background: #F6F7FA;
+  background: #e5e5e5;
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 18px;
@@ -1347,46 +1347,6 @@ header {
 .__select__label:hover {
   background-color: orange;
   color: #ffffff;
-}
-
-.modal-wrapper {
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  align-items: center;
-  justify-self: start;
-  color: #181818;
-  display: none;
-  opacity: 0;
-  transition: .3s;
-}
-
-.modal-wrapper.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #181818;
-  opacity: .4;
-}
-
-.modal-wrapper.active {
-  opacity: 1;
-  display: flex;
-}
-
-.modal {
-  background-color: white;
-  margin: 0 auto;
-  max-width: 600px;
-  border-radius: 18px;
-  position: relative;
-  padding: 50px 0;
 }
 
 @media screen and (max-width: 1300px) {
