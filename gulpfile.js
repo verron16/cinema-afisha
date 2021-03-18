@@ -12,6 +12,9 @@ const {
     STYLE_LIBS,
     JS_LIBS
 } = require('./gulp.config');
+
+const env = process.env.NODE_ENV;
+
 const gulp = require('gulp');
 const rm = require('gulp-rm');
 const sass = require('gulp-sass');
@@ -20,18 +23,17 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 const gulpif = require('gulp-if');
-const env = process.env.NODE_ENV;
 const webp = require('gulp-webp');
 const htmlmin = require('gulp-htmlmin');
 const gcmq = require('gulp-group-css-media-queries');
 const pug = require('gulp-pug');
-const cssmin = require('gulp-cssmin')
-const cssnano = require ("gulp-cssnano");
 const rename = require ("gulp-rename");
+const cssnano = require ("gulp-cssnano");
+
 
 sass.compiler = require('node-sass');
 
@@ -44,39 +46,41 @@ task('clean', () => {
 
 task('copy:html', () => {
     return src(`${SRC_PATH}/*.pug`)
+
+        // Конвертация pug в html
+        .pipe(pug())
         .pipe(gulpif(env === 'prod', htmlmin({
             collapseWhitespace: true
         })))
-        .pipe(pug())
         .pipe(dest(DIST_PATH))
         .pipe(browserSync.stream())
 });
 
 task('sass', () => {
     return src([...STYLE_LIBS, `${SRC_PATH}/scss/style.scss`])
-    .pipe(gulpif(env === 'dev', sourcemaps.init()))
-    .pipe(concat('style.scss'))
-    // Импорт стилей в один
-    .pipe(sassGlob())
-    .pipe(gulpif(env === 'prod', autoprefixer({
-        browsers: ['last 5 versions'],
-        cascade: true
-    })))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gcmq())
-    .pipe(gulpif(env === 'dev', sourcemaps.write()))
-    .pipe(gulpif(env === 'prod', rename({
-        suffix: ".min",
-        extname: ".css"
-    })))
-    .pipe(gulpif(env === 'prod', cssnano({
-        zindex: false,
-        discardComments: {
-            removeAll: true
-        }
-   })))
-    .pipe(dest(`${DIST_PATH}/css`))
-    .pipe(browserSync.stream())
+        .pipe(gulpif(env === 'dev', sourcemaps.init()))
+        .pipe(concat('style.scss'))
+        // Импорт стилей в один
+        .pipe(sassGlob())
+        .pipe(gulpif(env === 'prod', autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: true
+        })))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gcmq())
+        .pipe(gulpif(env === 'dev', sourcemaps.write()))
+        .pipe(gulpif(env === 'prod', rename({
+            suffix: ".min",
+            extname: ".css"
+        })))
+        .pipe(gulpif(env === 'prod', cssnano({
+            zindex: false,
+            discardComments: {
+                removeAll: true
+            }
+       })))
+        .pipe(dest(`${DIST_PATH}/css`))
+        .pipe(browserSync.stream())
 });
 
 task('scripts', () => {
@@ -88,7 +92,12 @@ task('scripts', () => {
         .pipe(gulpif(env === 'prod', babel({
             presets: ['@babel/env']
         })))
+        .pipe(gulpif(env === 'prod', uglify()))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
+        .pipe(gulpif(env === 'prod', rename({
+            suffix: ".min",
+            extname: ".js"
+        })))
         .pipe(dest(`${DIST_PATH}/js`))
         .pipe(browserSync.stream())
 });
@@ -118,29 +127,10 @@ task('images', () =>
 
 task('svg', () => {
     return src(`${SRC_PATH}/img/icons/*.svg`)
-        // .pipe(svgo({
-        //     plugins: [{
-        //         removeAttrs: {
-        //             attrs: '(fill|stroke)'
-        //         }
-        //     }]
-        // }))
-        // .pipe(svgSprite({
-        //     mode: {
-        //         symbol: {
-        //             sprite: 'sprite.svg'
-        //         }
-        //     }
-        // }))
         .pipe(dest(`${DIST_PATH}/img/icons`));
 });
 
-task('fonts', () => 
-    src(`${SRC_PATH}/fonts/*`)
-    .pipe(dest(`${DIST_PATH}/fonts`))
-)
 
+task('build', series('clean', parallel('copy:html', 'sass', 'scripts', 'images', 'svg')));
 
-task('build', series('clean', parallel('copy:html', 'sass', 'scripts', 'images', 'svg', 'fonts')));
-
-task('default', series('clean', parallel('copy:html', 'sass', 'scripts', 'images', 'svg', 'fonts'), parallel('server', 'watch')));
+task('default', series('clean', parallel('copy:html', 'sass', 'scripts', 'images', 'svg'), parallel('server', 'watch')));
