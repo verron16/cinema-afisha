@@ -1,173 +1,94 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
-/* Document
-   ========================================================================== */
+button,
+hr,
+input {
+  overflow: visible;
+}
 
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
+progress,
+sub,
+sup {
+  vertical-align: baseline;
+}
+
+[type=checkbox],
+[type=radio],
+legend {
+  box-sizing: border-box;
+  padding: 0;
+}
 
 html {
   line-height: 1.15;
-  /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
+  scroll-behavior: smooth;
 }
-
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
 
 body {
   margin: 0;
+  box-sizing: border-box;
 }
 
-/**
- * Render the `main` element consistently in IE.
- */
-
+details,
 main {
   display: block;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
-
-/* Grouping content
-   ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 
 hr {
   box-sizing: content-box;
-  /* 1 */
   height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace;
-  /* 1 */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace,monospace;
   font-size: 1em;
-  /* 2 */
 }
-
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
 
 a {
   background-color: transparent;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
 abbr[title] {
   border-bottom: none;
-  /* 1 */
   text-decoration: underline;
-  /* 2 */
   text-decoration: underline dotted;
-  /* 2 */
 }
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
 
 b,
 strong {
   font-weight: bolder;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
 small {
   font-size: 80%;
 }
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
 
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
-
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
 
 img {
   border-style: none;
 }
-
-/* Forms
-   ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
 
 button,
 input,
@@ -175,206 +96,78 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 1 */
   line-height: 1.15;
-  /* 1 */
   margin: 0;
-  /* 2 */
 }
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input {
-  /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
 
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit],
+button {
   -webkit-appearance: button;
 }
 
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+  outline: ButtonText dotted 1px;
 }
-
-/**
- * Correct the padding in Firefox.
- */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: .35em .75em .625em;
 }
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
 
 legend {
-  box-sizing: border-box;
-  /* 1 */
   color: inherit;
-  /* 2 */
   display: table;
-  /* 1 */
   max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
   white-space: normal;
-  /* 1 */
 }
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
 
 textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
-  /* 1 */
   outline-offset: -2px;
-  /* 2 */
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
-  /* 1 */
   font: inherit;
-  /* 2 */
 }
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
 
 summary {
   display: list-item;
 }
 
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
+[hidden],
 template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
   display: none;
 }
 
@@ -383,16 +176,27 @@ template {
   transition: .2s ease all;
 }
 
-#youtube path {
-  fill: green;
-}
-
+#youtube path,
 svg:hover .path {
   fill: green;
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins,sans-serif;
+}
+
+.actions-item-btn-link,
+.actions-item-wrapper-price,
+.actions-item-wrapper-songs,
+.actions-item-wrapper-title,
+.menu-item-link,
+.preview-wrapper-item,
+.rating-mod,
+.rating-wrapper-item-title,
+.section-title,
+.top-bar-wrapper-logotype,
+.top-bar-wrapper-strong {
+  font-family: "Century Gothic";
 }
 
 ul {
@@ -400,27 +204,13 @@ ul {
   margin: 0;
 }
 
-ol {
-  margin: 0;
-}
-
-body {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  margin: 0;
-}
-
+h6,
+ol,
 p,
 span {
   margin: 0;
@@ -436,7 +226,6 @@ span {
   text-align: center;
   margin: 0 auto;
   position: relative;
-  font-family: "Century Gothic";
 }
 
 .section-title-content {
@@ -459,7 +248,7 @@ span {
 }
 
 header {
-  background-image: url("../img/header-bg.webp");
+  background-image: url(../img/header-bg.webp);
   background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
@@ -471,7 +260,7 @@ header {
   background-color: #000;
   height: 100%;
   left: 0;
-  opacity: 0.50;
+  opacity: .5;
   position: absolute;
   top: 0;
   width: 100%;
@@ -495,11 +284,7 @@ header {
 }
 
 .top-bar-wrapper-logotype {
-  font-family: "Century Gothic";
-}
-
-.top-bar-wrapper-logotype {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 30px;
   transition: .3s linear;
@@ -510,12 +295,11 @@ header {
 }
 
 .top-bar-wrapper-logotype:hover .top-bar-wrapper-strong {
-  color: white;
+  color: #fff;
 }
 
 .top-bar-wrapper-strong {
   color: orange;
-  font-family: "Century Gothic";
   transition: .3s linear;
 }
 
@@ -529,9 +313,8 @@ header {
 }
 
 .menu-item-link {
-  color: white;
+  color: #fff;
   font-size: 16px;
-  font-family: "Century Gothic";
   font-weight: 600;
   text-decoration: none;
   transition: .4s linear all;
@@ -542,12 +325,21 @@ header {
 .menu-item-link::before {
   content: "";
   width: 0;
-  height: 0.1em;
+  height: .1em;
   position: absolute;
   bottom: 0;
   left: 50%;
   background: orange;
-  transition: all 0.3s;
+  transition: all .3s;
+}
+
+.actions-slider .swiper-button-next,
+.actions-slider .swiper-button-prev {
+  height: 40px;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
 }
 
 .menu-item-link:hover {
@@ -575,7 +367,7 @@ header {
 }
 
 .top-bar-burger-item {
-  background-color: white;
+  background-color: #fff;
   height: 2px;
   display: block;
   transition: .4s linear all;
@@ -609,22 +401,22 @@ header {
 
 @keyframes circleMove {
   0% {
-    transform: translate3d(50px, 40px, 0px);
+    transform: translate3d(50px,40px,0);
     animation-timing-function: ease-in;
   }
 
   50% {
-    transform: translate3d(50px, 50px, 0px);
+    transform: translate3d(50px,50px,0);
     animation-timing-function: ease-out;
   }
 
   100% {
-    transform: translate3d(50px, 40px, 0px);
+    transform: translate3d(50px,40px,0);
   }
 }
 
 .preview {
-  padding: 100px 0 100px 0;
+  padding: 100px 0;
   z-index: 5;
 }
 
@@ -637,14 +429,10 @@ header {
   position: relative;
 }
 
-.preview-wrapper-item {
-  font-family: "Century Gothic";
-}
-
 .preview-wrapper-item-title {
   padding-bottom: 40px;
   z-index: 100;
-  color: white;
+  color: #fff;
   font-size: 45px;
 }
 
@@ -653,7 +441,7 @@ header {
 }
 
 .preview-wrapper-item-desc {
-  color: white;
+  color: #fff;
   font-size: 20px;
   letter-spacing: 1px;
   line-height: 30px;
@@ -668,7 +456,7 @@ header {
 
 .preview-wrapper-item-link {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-weight: 700;
   background-color: orange;
   border-radius: 18px;
@@ -708,37 +496,39 @@ header {
   position: relative;
 }
 
+.actions-item-btn,
+.rating-mod {
+  position: absolute;
+  font-weight: 700;
+}
+
 .actions-item-btn {
   cursor: pointer;
-  outline: none;
-  position: absolute;
+  outline: 0;
   right: 30px;
   bottom: 30px;
   background-color: orange;
   border: 2px solid orange;
-  font-weight: 700;
   border-radius: 18px;
   transition: .3s linear;
   padding: 8px 20px;
 }
 
 .actions-item-btn-link {
-  color: white;
-  font-family: "Century Gothic";
+  color: #fff;
   text-decoration: none;
 }
 
 .actions-item-btn:hover {
-  background: transparent;
+  background: 0 0;
   color: orange;
 }
 
 .actions-item-wrapper {
-  color: white;
+  color: #fff;
 }
 
 .actions-item-wrapper-title {
-  font-family: "Century Gothic";
   padding-bottom: 10px;
 }
 
@@ -747,12 +537,10 @@ header {
 }
 
 .actions-item-wrapper-songs {
-  font-family: "Century Gothic";
   padding-bottom: 15px;
 }
 
 .actions-item-wrapper-price {
-  font-family: "Century Gothic";
   padding: 5px;
   background-color: orange;
   display: inline;
@@ -763,6 +551,7 @@ header {
 .actions-slider {
   margin-top: 70px;
   overflow: hidden;
+  position: relative;
 }
 
 .actions-slider .swiper-slide {
@@ -772,15 +561,15 @@ header {
 }
 
 .--morgen {
-  background-image: url("../img/morgen.webp");
+  background-image: url(../img/morgen.webp);
 }
 
 .--kizaru {
-  background-image: url("../img/kizaru.webp");
+  background-image: url(../img/kizaru.webp);
 }
 
 .--markul {
-  background-image: url("../img/markul.webp");
+  background-image: url(../img/markul.webp);
 }
 
 .actions-slider .swiper-slide:not(.swiper-slide-active) {
@@ -795,45 +584,32 @@ header {
   align-items: center;
 }
 
-.actions-slider {
-  position: relative;
-}
-
 .actions-slider .swiper-button-next {
-  background-color: orange;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 50%;
   font-size: 50px;
 }
 
 .actions-slider .swiper-button-next::after {
   font-size: 30px;
-  color: white;
+  color: #fff;
 }
 
 .actions-slider .swiper-button-prev {
-  background-color: orange;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 50%;
   font-size: 50px;
 }
 
 .actions-slider .swiper-button-prev::after {
   font-size: 30px;
-  color: white;
+  color: #fff;
 }
 
 .swiper-pagination .swiper-pagination-bullet {
-  background-color: white;
+  background-color: #fff;
   cursor: pointer;
   width: 12px;
   height: 12px;
 }
 
+.rating-mod,
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: orange;
 }
@@ -843,25 +619,25 @@ header {
 }
 
 .rating-mod {
-  position: absolute;
   left: -10px;
   top: -10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: orange;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-weight: 700;
-  font-family: "Century Gothic";
+  color: #fff;
+}
+
+.achives-wrapper-item,
+.rating-wrapper {
+  justify-content: space-between;
+  display: flex;
 }
 
 .rating-wrapper {
   margin-top: 70px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -871,20 +647,21 @@ header {
   position: relative;
   text-align: center;
   min-height: 250px;
-  background-color: white;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: 5px 5px 15px rgba(0,0,0,.2);
   border-radius: 18px;
-  padding: 20px 20px;
+  padding: 20px;
   transition: .3s linear all;
   margin-right: 20px;
 }
 
+.achives-wrapper-item:last-child,
 .rating-wrapper-item:last-child {
   margin-right: 0;
 }
 
 .rating-wrapper-item:hover {
-  transform: translate3d(0, -15px, 0);
+  transform: translate3d(0,-15px,0);
 }
 
 .rating-wrapper-item-picture {
@@ -894,21 +671,22 @@ header {
 
 .rating-wrapper-item-title {
   font-size: 30px;
-  font-family: "Century Gothic";
   padding-top: 10px;
   padding-bottom: 10px;
   color: orange;
 }
 
+.rating-wrapper-item-audit,
 .rating-wrapper-item-desc {
   color: #181818;
   font-family: "Century Gothic";
+}
+
+.rating-wrapper-item-desc {
   font-weight: 400;
 }
 
 .rating-wrapper-item-audit {
-  color: #181818;
-  font-family: "Century Gothic";
   font-weight: 600;
   padding-top: 15px;
 }
@@ -937,8 +715,6 @@ header {
 .achives-wrapper-item {
   text-align: center;
   transition: .3s linear all;
-  display: flex;
-  justify-content: space-between;
   justify-content: center;
   width: 260px;
   min-height: 180px;
@@ -967,12 +743,8 @@ header {
   padding-bottom: 25px;
 }
 
-.achives-wrapper-item:last-child {
-  margin-right: 0;
-}
-
 .achives-wrapper-item:hover {
-  transform: translate3d(0, -15px, 0);
+  transform: translate3d(0,-15px,0);
 }
 
 .reviews {
@@ -983,11 +755,12 @@ header {
 .reviews-slider {
   margin-top: 70px;
   overflow: hidden;
+  position: relative;
 }
 
 .reviews-wrapper {
   display: flex;
-  background-color: white;
+  background-color: #fff;
   justify-content: space-between;
   padding: 40px 100px;
   border-radius: 18px;
@@ -1015,43 +788,44 @@ header {
   padding-bottom: 30px;
 }
 
-.reviews-wrapper-item-desc {
-  color: #808080;
-  font-weight: 400;
-  font-family: "Century Gothic";
-  font-size: 25px;
-}
-
-.reviews-slider .swiper-button-next {
-  background-color: orange;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 50px;
-}
-
-.reviews-slider .swiper-button-next::after {
-  font-size: 30px;
-  color: white;
-}
-
+.reviews-slider .swiper-button-next,
 .reviews-slider .swiper-button-prev {
   background-color: orange;
   width: 40px;
   height: 40px;
   padding: 10px;
   border-radius: 50%;
+}
+
+.reviews-wrapper-item-desc {
+  color: grey;
+  font-weight: 400;
+  font-family: "Century Gothic";
+  font-size: 25px;
+}
+
+.reviews-slider .swiper-button-next {
   font-size: 50px;
+}
+
+.reviews-slider .swiper-button-next::after {
+  font-size: 30px;
+  color: #fff;
+}
+
+.reviews-slider .swiper-button-prev {
+  font-size: 50px;
+}
+
+.faq-wrapper-item,
+.form-btn {
+  border-radius: 18px;
+  cursor: pointer;
 }
 
 .reviews-slider .swiper-button-prev::after {
   font-size: 30px;
-  color: white;
-}
-
-.reviews-slider {
-  position: relative;
+  color: #fff;
 }
 
 .faq {
@@ -1069,16 +843,13 @@ header {
   display: flex;
   flex-direction: column;
   max-width: 800px;
-  margin: 0 auto;
-  margin-top: 70px;
+  margin: 70px auto 0;
 }
 
 .faq-wrapper-item {
   background: #e5e5e5;
   margin-top: 20px;
   padding: 10px 20px;
-  border-radius: 18px;
-  cursor: pointer;
 }
 
 .faq-wrapper-item-answer {
@@ -1124,7 +895,7 @@ header {
 }
 
 .--footer-title-mod {
-  color: white;
+  color: #fff;
 }
 
 .contacts {
@@ -1139,21 +910,27 @@ header {
   margin-top: 70px;
 }
 
+.contacts-wrapper-item:last-child,
+.form {
+  flex-direction: column;
+  display: flex;
+}
+
 .contacts-wrapper-item-title {
-  color: white;
+  color: #fff;
   padding-bottom: 20px;
   font-family: "Century Gothic";
 }
 
 .contacts-wrapper-item-desc {
-  color: white;
+  color: #fff;
   font-family: "Century Gothic";
   padding-bottom: 10px;
 }
 
 .contacts-wrapper-item-link {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-family: "Century Gothic";
   padding-top: 10px;
   display: inline-block;
@@ -1164,34 +941,27 @@ header {
   font-family: "Century Gothic";
 }
 
-.contacts-wrapper-item:last-child {
-  display: flex;
-  flex-direction: column;
+.__select__title,
+.form-btn,
+.form-title {
+  color: #fff;
+  font-family: "Century Gothic";
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 .form-title {
-  color: white;
-  font-family: "Century Gothic";
   font-size: 24px;
 }
 
 .form-btn {
-  padding: 10px 10px;
+  padding: 10px;
   margin-top: 20px;
-  cursor: pointer;
   background-color: orange;
-  color: white;
-  font-family: "Century Gothic";
   font-weight: 700;
-  border: none;
-  outline: none;
-  border-radius: 18px;
+  outline: 0;
   border: 2px solid orange;
   width: 150px;
   transition: .3s linear all;
@@ -1204,7 +974,7 @@ header {
 
 .form-item {
   margin-top: 20px;
-  outline: none;
+  outline: 0;
   border: none;
   border-radius: 18px;
   padding: 10px 20px;
@@ -1224,19 +994,19 @@ header {
   margin-bottom: 20px;
 }
 
-.__select[data-state="active"] .__select__title::before {
-  transform: translate(-3px, -50%) rotate(-45deg);
+.__select[data-state=active] .__select__title::before {
+  transform: translate(-3px,-50%) rotate(-45deg);
 }
 
-.__select[data-state="active"] .__select__title::after {
-  transform: translate(3px, -50%) rotate(45deg);
+.__select[data-state=active] .__select__title::after {
+  transform: translate(3px,-50%) rotate(45deg);
 }
 
-.__select[data-state="active"] .__select__content {
+.__select[data-state=active] .__select__content {
   opacity: 1;
 }
 
-.__select[data-state="active"] .__select__label + .__select__input + .__select__label {
+.__select[data-state=active] .__select__label+.__select__input+.__select__label {
   max-height: 40px;
   border-top-width: 1px;
 }
@@ -1246,36 +1016,34 @@ header {
   align-items: center;
   height: 100%;
   padding: 8px 16px;
-  font-family: "Century Gothic";
   border-radius: 5px;
-  border: solid 1px white;
-  color: white;
+  border: 1px solid #fff;
   cursor: pointer;
 }
 
-.__select__title::before,
-.__select__title::after {
+.__select__title::after,
+.__select__title::before {
   content: "";
   position: absolute;
   right: 16px;
   display: block;
   width: 10px;
   height: 2px;
-  transition: all 0.3s ease-out;
-  background-color: white;
-  transform: translate(-3px, -50%) rotate(45deg);
+  transition: all .3s ease-out;
+  background-color: #fff;
+  transform: translate(-3px,-50%) rotate(45deg);
 }
 
 .__select__title::after {
-  transform: translate(3px, -50%) rotate(-45deg);
+  transform: translate(3px,-50%) rotate(-45deg);
 }
 
 .__select__title:hover {
   border-color: orange;
 }
 
-.__select__title:hover::before,
-.__select__title:hover::after {
+.__select__title:hover::after,
+.__select__title:hover::before {
   background-color: orange;
 }
 
@@ -1283,20 +1051,19 @@ header {
   display: flex;
   width: 230px;
   padding: 8px 16px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  border: solid 1px #c7ccd1;
+  margin: 0 auto 10px;
+  border: 1px solid #c7ccd1;
   border-radius: 5px;
-  transition: all 0.2s ease-out;
+  transition: all .2s ease-out;
   cursor: pointer;
-  font-weight: bold;
-  background-color: #ffffff;
-  color: #333333;
+  font-weight: 700;
+  background-color: #fff;
+  color: #333;
 }
 
 .reset:hover {
   background-color: #D8093A;
-  color: #ffffff;
+  color: #fff;
 }
 
 .__select__content {
@@ -1305,12 +1072,12 @@ header {
   display: flex;
   flex-direction: column;
   width: calc(100% - 6px);
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #c7ccd1;
   border-top: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  transition: all 0.3s ease-out;
+  transition: all .3s ease-out;
   opacity: 0;
   z-index: 8;
 }
@@ -1319,12 +1086,12 @@ header {
   display: none;
 }
 
-.__select__input:checked + label {
+.__select__input:checked+label {
   background-color: #dedede;
 }
 
-.__select__input:disabled + label {
-  opacity: 0.6;
+.__select__input:disabled+label {
+  opacity: .6;
   pointer-events: none;
 }
 
@@ -1335,28 +1102,28 @@ header {
   height: 40px;
   max-height: 0;
   padding: 0 16px;
-  transition: all 0.2s ease-out;
+  transition: all .2s ease-out;
   cursor: pointer;
   overflow: hidden;
 }
 
-.__select__label + input + .__select__label {
+.__select__label+input+.__select__label {
   border-top: 0 solid #C7CCD160;
 }
 
 .__select__label:hover {
   background-color: orange;
-  color: #ffffff;
+  color: #fff;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width:1300px) {
   .preview-wrapper-item:last-child {
     animation-iteration-count: initial;
     animation-name: initial;
   }
 }
 
-@media screen and (max-width: 1210px) {
+@media screen and (max-width:1210px) {
   .achives-wrapper {
     justify-content: center;
     flex-wrap: wrap;
@@ -1367,11 +1134,11 @@ header {
   }
 
   .achives-wrapper-item:hover {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0,0,0);
   }
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width:1170px) {
   .actions-item {
     min-height: 350px;
   }
@@ -1385,7 +1152,7 @@ header {
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width:1080px) {
   .rating-wrapper {
     justify-content: center;
     flex-wrap: wrap;
@@ -1399,11 +1166,11 @@ header {
   }
 
   .rating-wrapper-item:hover {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0,0,0);
   }
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width:1040px) {
   .preview-wrapper {
     flex-wrap: wrap;
     flex-direction: column;
@@ -1420,7 +1187,7 @@ header {
   }
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width:930px) {
   .top-bar-burger {
     display: flex;
     z-index: 51;
@@ -1465,7 +1232,12 @@ header {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
+  .actions-item,
+  .reviews-wrapper-item:first-child img {
+    margin-right: 0;
+  }
+
   .preview-wrapper {
     margin-top: 60px;
   }
@@ -1474,6 +1246,7 @@ header {
     font-size: 30px;
   }
 
+  .faq-wrapper-item-quest-content,
   .preview-wrapper-item-desc {
     font-size: 18px;
   }
@@ -1493,39 +1266,27 @@ header {
     width: 200px;
   }
 
-  .faq-wrapper-item-quest-content {
-    font-size: 18px;
+  .actions-slider .swiper-button-next::after,
+  .actions-slider .swiper-button-prev::after {
+    font-size: 20px;
   }
 
   .actions-item {
     min-height: 250px;
-    margin-right: 0;
   }
 
   .actions-slider .swiper-slide {
     width: 400px;
   }
 
-  .actions-slider .swiper-slide:not(.swiper-slide-active) .actions-item {
-    min-height: 150px;
-  }
-
-  .actions-slider .swiper-button-next {
-    width: 20px;
-    height: 20px;
-  }
-
-  .actions-slider .swiper-button-next::after {
-    font-size: 20px;
-  }
-
+  .actions-slider .swiper-button-next,
   .actions-slider .swiper-button-prev {
     width: 20px;
     height: 20px;
   }
 
-  .actions-slider .swiper-button-prev::after {
-    font-size: 20px;
+  .actions-slider .swiper-slide:not(.swiper-slide-active) .actions-item {
+    min-height: 150px;
   }
 
   .reviews-wrapper {
@@ -1547,8 +1308,10 @@ header {
     height: 170px;
   }
 
-  .reviews-wrapper-item:first-child img {
-    margin-right: 0;
+  .reviews-slider .swiper-button-next,
+  .reviews-slider .swiper-button-prev {
+    width: 20px;
+    height: 20px;
   }
 
   .reviews-wrapper-item-desc {
@@ -1556,26 +1319,13 @@ header {
     text-align: center;
   }
 
-  .reviews-slider .swiper-button-next {
-    width: 20px;
-    height: 20px;
-  }
-
-  .reviews-slider .swiper-button-next::after {
-    font-size: 20px;
-  }
-
-  .reviews-slider .swiper-button-prev {
-    width: 20px;
-    height: 20px;
-  }
-
+  .reviews-slider .swiper-button-next::after,
   .reviews-slider .swiper-button-prev::after {
     font-size: 20px;
   }
 }
 
-@media screen and (max-width: 659px) {
+@media screen and (max-width:659px) {
   .section-title-content {
     font-size: 30px;
   }
@@ -1590,7 +1340,12 @@ header {
   }
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width:468px) {
+  .actions-item,
+  .actions-slider .swiper-slide:not(.swiper-slide-active) .actions-item {
+    min-height: 170px;
+  }
+
   .top-bar-wrapper-logotype {
     font-size: 25px;
   }
@@ -1601,7 +1356,6 @@ header {
 
   .actions-item {
     padding: 15px;
-    min-height: 170px;
   }
 
   .actions-item-btn {
@@ -1616,11 +1370,8 @@ header {
     font-size: 16px;
   }
 
+  .actions-item-wrapper-price,
   .actions-item-wrapper-songs {
-    font-size: 15px;
-  }
-
-  .actions-item-wrapper-price {
     font-size: 15px;
   }
 
@@ -1628,15 +1379,8 @@ header {
     width: 90%;
   }
 
-  .actions-slider .swiper-button-next {
-    display: none;
-  }
-
+  .actions-slider .swiper-button-next,
   .actions-slider .swiper-button-prev {
     display: none;
-  }
-
-  .actions-slider .swiper-slide:not(.swiper-slide-active) .actions-item {
-    min-height: 170px;
   }
 }

@@ -23,17 +23,16 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
 const gulpif = require('gulp-if');
 const env = process.env.NODE_ENV;
 const webp = require('gulp-webp');
 const htmlmin = require('gulp-htmlmin');
 const gcmq = require('gulp-group-css-media-queries');
 const pug = require('gulp-pug');
-
+const cssmin = require('gulp-cssmin')
 // svg sprite
-const svgSprite = require('gulp-svg-sprite');
-const svgo = require('gulp-svgo');
+// const svgSprite = require('gulp-svg-sprite');
+// const svgo = require('gulp-svgo');
 
 
 sass.compiler = require('node-sass');
@@ -61,6 +60,7 @@ task('sass', () => {
         .pipe(concat('style.scss'))
         .pipe(sassGlob())
         .pipe(sass().on('error', sass.logError))
+        .pipe(cssmin())
         .pipe(gulpif(env === 'prod', autoprefixer({
             browsers: ['last 3 versions'],
             cascade: false
@@ -81,7 +81,6 @@ task('scripts', () => {
         .pipe(gulpif(env === 'prod', babel({
             presets: ['@babel/env']
         })))
-        .pipe(gulpif(env === 'prod', uglify()))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest(`${DIST_PATH}/js`))
         .pipe(browserSync.stream())
