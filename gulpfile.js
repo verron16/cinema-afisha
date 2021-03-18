@@ -30,10 +30,8 @@ const htmlmin = require('gulp-htmlmin');
 const gcmq = require('gulp-group-css-media-queries');
 const pug = require('gulp-pug');
 const cssmin = require('gulp-cssmin')
-// svg sprite
-// const svgSprite = require('gulp-svg-sprite');
-// const svgo = require('gulp-svgo');
-
+const cssnano = require ("gulp-cssnano");
+const rename = require ("gulp-rename");
 
 sass.compiler = require('node-sass');
 
@@ -56,20 +54,29 @@ task('copy:html', () => {
 
 task('sass', () => {
     return src([...STYLE_LIBS, `${SRC_PATH}/scss/style.scss`])
-        .pipe(gulpif(env === 'dev', sourcemaps.init()))
-        .pipe(concat('style.scss'))
-        .pipe(sassGlob())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(cssmin())
-        .pipe(gulpif(env === 'prod', autoprefixer({
-            browsers: ['last 3 versions'],
-            cascade: false
-        })))
-        .pipe(gulpif(env === 'prod', cleanCSS()))
-        .pipe(gulpif(env === 'prod', sourcemaps.write()))
-        .pipe(gcmq())
-        .pipe(dest(`${DIST_PATH}/css`))
-        .pipe(browserSync.stream())
+    .pipe(gulpif(env === 'dev', sourcemaps.init()))
+    .pipe(concat('style.scss'))
+    // Импорт стилей в один
+    .pipe(sassGlob())
+    .pipe(gulpif(env === 'prod', autoprefixer({
+        browsers: ['last 5 versions'],
+        cascade: true
+    })))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gcmq())
+    .pipe(gulpif(env === 'dev', sourcemaps.write()))
+    .pipe(gulpif(env === 'prod', rename({
+        suffix: ".min",
+        extname: ".css"
+    })))
+    .pipe(gulpif(env === 'prod', cssnano({
+        zindex: false,
+        discardComments: {
+            removeAll: true
+        }
+   })))
+    .pipe(dest(`${DIST_PATH}/css`))
+    .pipe(browserSync.stream())
 });
 
 task('scripts', () => {
